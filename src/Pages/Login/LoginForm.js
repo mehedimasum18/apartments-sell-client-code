@@ -41,7 +41,7 @@ const LoginForm = () => {
                 fullWidth
                 margin="dense"
                 label="Email Address"
-                variant="standard"
+                variant="filled"
                 {...register("email", { required: true })}
               />
               <TextField
@@ -49,7 +49,7 @@ const LoginForm = () => {
                 margin="dense"
                 label="Password"
                 type="password"
-                variant="standard"
+                variant="filled"
                 {...register("password", { required: true })}
               />
               <Button

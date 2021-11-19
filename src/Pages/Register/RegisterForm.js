@@ -9,7 +9,7 @@ import useAuth from '../../Hooks/useAuth';
 const RegisterForm = () => {
   const { register, handleSubmit, errors } = useForm();
   const [loading, setLoading] = React.useState();
-  const { signUp, error, setError } = useAuth();
+  const { signUp, error, setError, googleSignIn } = useAuth();
   
   const history = useHistory();
   const onSubmit = (data) => {
@@ -44,7 +44,7 @@ const RegisterForm = () => {
             margin="dense"
             label="Name"
             type="text"
-            variant="standard"
+            variant="filled"
             {...register("name", { required: true })}
           />
           <TextField
@@ -52,7 +52,7 @@ const RegisterForm = () => {
             margin="dense"
             label="Email Address"
             name="email"
-            variant="standard"
+            variant="filled"
             {...register("email", { required: true })}
           />
           <TextField
@@ -61,7 +61,7 @@ const RegisterForm = () => {
             label="Password"
             name="password"
             type="password"
-            variant="standard"
+            variant="filled"
             {...register("password", { required: true })}
           />
           <TextField
@@ -69,7 +69,7 @@ const RegisterForm = () => {
             margin="dense"
             label="Confirm Password"
             type="password"
-            variant="standard"
+            variant="filled"
             {...register("confirmPassword", { required: true })}
           />
           <Button
@@ -85,6 +85,10 @@ const RegisterForm = () => {
           <Typography variant="body1" color="initial">
             Already have an account? <Link to="/login">Login</Link>
           </Typography>
+          <Button variant="contained" color="success" onClick={googleSignIn}>
+            {" "}
+            Google SignIn{" "}
+          </Button>
         </Box>
       </Paper>
     </Container>
