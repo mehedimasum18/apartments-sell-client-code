@@ -1,0 +1,112 @@
+[
+    {
+        "id":1,
+        "Name":"Gorgeous Farm in Myrtle",
+        "Location": "Gulshan",
+        "description": "Citizens of distant epochs. Jean-François Champollion explorations? Brain is the seed of intelligence from which we",
+        "size":"1380sq feet",
+        "badroom":3,
+        "image":"https://i.ibb.co/ZLMDBQp/projects-Avant-Apartments-Seattle-001.jpg"
+    },
+    {
+        "id":2,
+        "Name":"Gorgeous Farm in Myrtle",
+        "Location": "Cox's Bazar",
+        "description": "Citizens of distant epochs. Jean-François Champollion explorations? Brain is the seed of intelligence from which we",
+        "size":"1200sq feet",
+        "badroom":3,
+        "image":"https://i.ibb.co/N2sM6Qp/property4-370x180.jpg"
+    },
+    {
+        "id":3,
+        "Name":"Gorgeous Farm in Myrtle",
+        "Location": "Rangpur",
+        "description": "Citizens of distant epochs. Jean-François Champollion explorations? Brain is the seed of intelligence from which we",
+        "size":"1380sq feet",
+        "badroom":3,
+        "image":"https://i.ibb.co/TPk61kW/property3-370x180.jpg"
+    },
+    {
+        "id":4,
+        "Name":"Gorgeous Farm in Myrtle",
+        "Location": "Nilkhat",
+        "description": "Citizens of distant epochs. Jean-François Champollion explorations? Brain is the seed of intelligence from which we",
+        "size":"1040sq feet",
+        "badroom":3,
+        "image":"https://i.ibb.co/7k7XVCd/images-1.jpg"
+    },
+    {
+        "id":5,
+        "Name":"Gorgeous Farm in Myrtle",
+        "Location": "kalabagan",
+        "description": "Citizens of distant epochs. Jean-François Champollion explorations? Brain is the seed of intelligence from which we",
+        "size":"1040sq feet",
+        "badroom":3,
+        "image":"https://i.ibb.co/L8sg0VX/images-2.jpg"
+    },
+    {
+        "id":6,
+        "Name":"Gorgeous Farm in Myrtle",
+        "Location": "Motijheel",
+        "description": "Citizens of distant epochs. Jean-François Champollion explorations? Brain is the seed of intelligence from which we",
+        "size":"1040sq feet",
+        "badroom":3,
+        "image":"https://i.ibb.co/bWZtLxs/image-12-1-770x460.webp"
+    },
+    {
+        "id":7,
+        "Name":"Gorgeous Farm in Myrtle",
+        "Location": "Kalabagan",
+        "description": "Citizens of distant epochs. Jean-François Champollion explorations? Brain is the seed of intelligence from which we",
+        "size":"1040sq feet",
+        "badroom":3,
+        "image":"https://i.ibb.co/khPDbHJ/property2-370x180.jpg"
+    },
+    {
+        "id":8,
+        "Name":"Gorgeous Farm in Myrtle",
+        "Location": "Mugda",
+        "description": "Citizens of distant epochs. Jean-François Champollion explorations? Brain is the seed of intelligence from which we",
+        "size":"1040sq feet",
+        "badroom":3,
+        "image":"https://i.ibb.co/BnSn2Nq/property7-370x180.jpg"
+    },
+    {
+        "id":9,
+        "Name":"Gorgeous Farm in Myrtle",
+        "Location": "Khilgon",
+        "description": "Citizens of distant epochs. Jean-François Champollion explorations? Brain is the seed of intelligence from which we",
+        "size":"1240sq ft",
+        "badroom":3,
+        "image":"https://i.ibb.co/B4WPLtm/image.jpg"
+    },
+    {
+        "id":10,
+        "Name":"Gorgeous Farm in Myrtle",
+        "Location": "Ranpura",
+        "description": "Citizens of distant epochs. Jean-François Champollion explorations? Brain is the seed of intelligence from which we",
+        "size":"1140sq feet",
+        "badroom":3,
+        "image":"https://i.ibb.co/TPk61kW/property3-370x180.jpg"
+    },
+    {
+        "id":11,
+        "Name":"Gorgeous Farm in Myrtle",
+        "Location": "kalabagan",
+        "description": "Citizens of distant epochs. Jean-François Champollion explorations? Brain is the seed of intelligence from which we",
+        "size":"1040sq feet",
+        "badroom":3,
+        "image":"https://i.ibb.co/L8sg0VX/images-2.jpg"
+    },
+   
+    {
+        "id":12,
+        "Name":"Gorgeous Farm in Myrtle",
+        "Location": "kalabagan",
+        "description": "Citizens of distant epochs. Jean-François Champollion explorations? Brain is the seed of intelligence from which we",
+        "size":"1040sq feet",
+        "badroom":3,
+        "image":"https://i.ibb.co/L8sg0VX/images-2.jpg"
+    }
+   
+]

@@ -1,0 +1,7 @@
+.about_img{
+    background: url("https://i.ibb.co/hYMh2YP/bad-room-harun-grcb.gif") no-repeat center / cover;
+    height: "600px";
+    display: "flex";
+    align-items: "center";
+    text-align: "left";
+}
