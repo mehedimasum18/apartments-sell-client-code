@@ -107,7 +107,6 @@ const UserOrder = () => {
                   </StyledTableCell>
                   <StyledTableCell align="left">
                     <Fab
-                      size="small"
                       style={{ color: "red", background: "#fff" }}
                       sx={{ mr: 1 }}
                       onClick={() => handleDelete(order._id)}

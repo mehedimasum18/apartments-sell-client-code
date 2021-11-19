@@ -18,7 +18,8 @@ import Footer from "../../Shared/Footer/Footer";
 import Navigation from "../../Shared/Navigation/Navigation";
 
 const ServiceDetails = () => {
-  const { serviceId } = useParams();
+  const { id } = useParams();
+  console.log(id)
   const [serviceDetail, setServiceDetail] = useState([]);
   const [singleService, setSingleService] = useState({});
 
@@ -33,12 +34,12 @@ const ServiceDetails = () => {
 
   useEffect(() => {
     if (serviceDetail.length > 0) {
-      const matchData = serviceDetail.find((data) => data._id == serviceId);
+      const matchData = serviceDetail.find((data) => data.id == id);
       setSingleService(matchData);
     }
   }, [serviceDetail]);
 
-  const { image, Name, size, description } = singleService;
+  const { image, Name, Price, description } = singleService;
   const [open, setOpen] = useState(false);
   const handleClickOpen = () => {
     setOpen(true);
@@ -53,59 +54,33 @@ const ServiceDetails = () => {
             <Card elevation={0}>
               <CardMedia
                 component="img"
-                sx={{ height: "500px" }}
+                sx={{ height: "500px", mb:5 }}
                 image={image}
                 alt="drone"
               />
-              <CardContent>
-                <Typography gutterBottom variant="h4" component="div">
-                  {Name}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{ color: "rgba(34, 45, 53, 0.7)" }}
-                >
-                  {description}
-                </Typography>
-                <Typography variant="h6" color="text.success">
-                  $ {size}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button size="lg" variant="contained" onClick={handleClickOpen}>
-                  Buy now
-                </Button>
-              </CardActions>
             </Card>
           </Grid>
           <Grid item xs={12} md={3}>
-            <Box
-              sx={{
-                p: 3,
-                background: "#F5F5F5",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <Typography
-                variant="h6"
-                color="initial"
-                sx={{ fontWeight: "bold" }}
-              >
-                SUBSCRIBE TO NEWSLETTER
+            <CardContent>
+              <Typography gutterBottom variant="h4" component="div">
+                {Name}
               </Typography>
-              <TextField
-                fullWidth
-                type="email"
-                margin="dense"
-                label="Your email"
-                variant="filled"
-                color="success"
-              />
-              <Button variant="contained" fullWidth sx={{ mt: 1 }}>
-                Subscribe
+              <Typography
+                variant="body2"
+                sx={{ color: "rgba(34, 45, 53, 0.7)" }}
+              >
+                {description}
+              </Typography>
+             
+              <Typography variant="h6" color="text.success">
+                $ {Price}
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="lg" variant="outlined" onClick={handleClickOpen}>
+                Booking Now
               </Button>
-            </Box>
+            </CardActions>
           </Grid>
         </Grid>
         <PurchaseNow open={open} setOpen={setOpen} />

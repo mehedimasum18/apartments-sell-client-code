@@ -1,5 +1,10 @@
-import { Button, Container, Paper, TextField, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import {
+  Box, Button,
+  Container,
+  Paper,
+  TextField,
+  Typography,
+} from "@mui/material";
 import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -23,38 +28,31 @@ const MakeAdmin = () => {
       </Typography>
       <Paper
         component={Box}
-        elevation={4}
+        elevation={0}
         p={4}
-        sx={{ minWidth: { xs: "100%", md: "80%" }, mx: "auto" }}
+        sx={{ minWidth: { xs: "100%", md: "60%" }, mx: "auto" }}
       >
         <Box
+          sx={{ minWidth: { xs: "100%", md: "50%" }, mx: "auto" }}
           component="form"
           onSubmit={handleSubmit(onSubmit)}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
         >
           <TextField
-            margin="dense"
             label="Email Address"
             fullWidth
             type="email"
-            variant="filled"
+            variant="outlined"
             required
             {...register("email", { required: true })}
           />
-          <Box>
-            <Button
-              type="submit"
-              variant="contained"
-              color="secondary"
-              width="50%"
-            >
-              Add Admin
-            </Button>
-          </Box>
+          <Button
+            type="submit"
+            sx={{ mt: 4 }}
+            variant="outlined"
+            color="success"
+          >
+            Add Admin
+          </Button>
         </Box>
       </Paper>
     </Container>

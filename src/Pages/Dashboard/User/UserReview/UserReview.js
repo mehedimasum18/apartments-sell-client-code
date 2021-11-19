@@ -26,8 +26,10 @@ const UserReview = () => {
           Give Your Review
         </Typography>
         <Paper
-          component={Box} elevation={4} p={4}
-          sx={{ minWidth: { xs: "100%", md: "70%" }, mx: "auto" }}
+          component={Box}
+          elevation={1}
+          p={4}
+          sx={{ minWidth: { xs: "100%", md: "50%" }, mx: "auto" }}
         >
           <Box component="form" onSubmit={handleSubmit(onSubmit)}>
             <TextField
@@ -36,35 +38,32 @@ const UserReview = () => {
               label="Name"
               type="text"
               fullWidth
-              variant="filled"
+              variant="outlined"
               required
               {...register("name", { required: true })}
-            />
-            <TextField
-              margin="dense"
-              label="Your Position"
-              type="text"
-              fullWidth
-              variant="filled"
-              required
-              {...register("position", { required: true })}
             />
             <TextField
               margin="dense"
               label="Rating Number"
               type="number"
               helperText="Maximum 5 Rating you can"
-              fullWidth  variant="filled" required
+              fullWidth
+              variant="outlined"
+              required
               {...register("rating", { required: true, maxLength: 5 })}
             />
             <TextField
               margin="dense"
               label="Write your product review"
               type="text"
-              fullWidth multiline rows={5} variant="filled" required
+              fullWidth
+              multiline
+              rows={5}
+              variant="outlined"
+              required
               {...register("reviewText", { required: true })}
             />
-            <Button type="submit" variant="contained">
+            <Button type="submit" variant="outlined">
               send
             </Button>
           </Box>

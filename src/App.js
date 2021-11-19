@@ -6,6 +6,8 @@ import Home from "./Pages/Home/Home";
 import Explore from "./Pages/Explore/Explore";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
+import Service from "./Component/Home/Services/Service/Service";
+import ServiceDetails from "./Pages/ServiceDetails/ServiceDetails";
 
 function App() {
   return (
@@ -14,6 +16,9 @@ function App() {
         <Router>
           <Route exact path="/">
             <Home></Home>
+          </Route>
+          <Route exact path="/service/:id">
+            <ServiceDetails></ServiceDetails>
           </Route>
           <Route path="/explore">
             <Explore></Explore>

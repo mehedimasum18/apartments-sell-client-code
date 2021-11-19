@@ -9,6 +9,7 @@ const Login = () => {
         boxHeight: {
           height: "90vh",
           display: "flex",
+          background: "#00adff14",
           alignItems: "center",
           justifyContent: "center",
         },

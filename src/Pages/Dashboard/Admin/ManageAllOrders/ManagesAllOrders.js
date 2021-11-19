@@ -1,25 +1,24 @@
-import { Button, Container, Paper, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
+import {Box, Button, Container, Paper, Table, TableBody, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
 import { styled } from '@mui/styles';
-import { Box } from '@mui/system';
 import axios from 'axios';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-
+import { TableCell, tableCellClasses } from "@mui/material";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    backgroundColor: "#4e4e4e",
+    color: "#fff",
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
-  },
+  }
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-of-type(odd)": {
-    backgroundColor: theme.palette.action.hover,
+    // backgroundColor: theme?.palette.action.hover,
   },
   // hide last border
   "&:last-child td, &:last-child th": {
@@ -61,9 +60,9 @@ const ManagesAllOrders = () => {
       <>
         <Container>
           <Typography variant="h4" component={Box} sx={{ my: 2 }}>
-            Manage Order
+            Manage Apartment Booking 
           </Typography>
-          <TableContainer component={Paper}>
+          <TableContainer>
             <Table
               sx={{ minWidth: { xs: "auto", md: 700 } }}
               arial-label="customized table"

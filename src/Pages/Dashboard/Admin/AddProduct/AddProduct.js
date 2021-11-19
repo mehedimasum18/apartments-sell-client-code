@@ -1,5 +1,11 @@
-import { Button, Container, Grid, Paper, TextField, Typography } from '@mui/material';
-import { Box } from '@mui/system';
+import {
+  Box, Button,
+  Container,
+  Grid,
+  Paper,
+  TextField,
+  Typography,
+} from "@mui/material";
 import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
@@ -23,7 +29,7 @@ const AddProduct = () => {
         </Typography>
         <Paper
           component={Box}
-          elevation={4}
+          elevation={0}
           sx={{ minWidth: { xs: "100%", md: "60%" }, mx: "auto" }}
           p={4}
         >
@@ -33,30 +39,19 @@ const AddProduct = () => {
             component="form"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <Grid item sx={12} md={6}>
+            <Grid item sx={12} md={7}>
               <TextField
                 label="Service Title"
-                variant="filled"
+                variant="outlined"
                 margin="dense"
                 type="text"
                 fullWidth
                 {...register("title", { required: true })}
               />
-              <TextField
-                label="Service Description"
-                variant="filled"
-                margin="dense"
-                type="text"
-                fullWidth
-                multiline
-                rows={5}
-                {...register("desc", { required: true })}
-              />
-            </Grid>
-            <Grid item sx={12} md={6}>
+
               <TextField
                 label="Service Price"
-                variant="filled"
+                variant="outlined"
                 margin="dense"
                 type="number"
                 fullWidth
@@ -64,21 +59,33 @@ const AddProduct = () => {
               />
               <TextField
                 label="Service Image url"
-                variant="filled"
+                variant="outlined"
                 margin="dense"
                 type="text"
                 fullWidth
                 {...register("image_url", { required: true })}
               />
+              <TextField
+                label="Service Description"
+                variant="outlined"
+                margin="dense"
+                type="text"
+                fullWidth
+                multiline
+                rows={5}
+                {...register("desc", { required: true })}
+              />
+
+              <Button
+                type="submit"
+                variant="contained"
+                color="success"
+                sx={{ ml: "auto", mt:3 }}
+              >
+                Add Apartment
+              </Button>
             </Grid>
-            <Button
-              type="submit"
-              variant="contained"
-              color="secondary"
-              sx={{ ml: "auto" }}
-            >
-              Add Service
-            </Button>
+          
           </Grid>
         </Paper>
       </Container>

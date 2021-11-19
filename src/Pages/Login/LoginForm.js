@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 const LoginForm = () => {
-  const { register, handleSubmit, errors } = useForm();
-  const { logIn, error, setError, googleSignIn, isLoading } = useAuth();
+  const { register, handleSubmit} = useForm();
+  const { logIn, error, googleSignIn, isLoading, } = useAuth();
   const history = useHistory();
   const location = useLocation();
   const onSubmit = async (data) => {
@@ -65,7 +65,14 @@ const LoginForm = () => {
                 Create an account? <Link to="/register">Register</Link>
               </Typography>
               {isLoading && <CircularProgress />}
-              
+              <Button
+                variant="contained"
+                color="success"
+                onClick={googleSignIn}
+              >
+                {" "}
+                Google SignIn{" "}
+              </Button>
             </Box>
           </Paper>
         </Container>

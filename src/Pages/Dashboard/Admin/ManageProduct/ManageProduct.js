@@ -1,26 +1,37 @@
-import { Container, Fab, Paper, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
+import {
+  Box,Container,
+  Fab,
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  tableCellClasses,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Typography,
+} from "@mui/material";
 import { styled } from '@mui/styles';
-import { Box } from '@mui/system';
 import axios from 'axios';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
 
-
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    backgroundColor: "#000",
+    color: "#fff",
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
   },
 }));
 
+
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-of-type(odd)": {
-    backgroundColor: theme.palette.action.hover,
+    // backgroundColor: theme.palette.action.hover,
   },
   // hide last border
   "&:last-child td, &:last-child th": {
@@ -78,17 +89,16 @@ const ManageProduct = () => {
                   <>
                     <StyledTableRow key={products._id} key={products._id}>
                       <StyledTableCell component="th" scope="row">
-                        {products.title}
+                        {products.Name}
                       </StyledTableCell>
                       <StyledTableCell align="left">
-                        {products.desc.slice(0, 130)}
+                        {products.description}
                       </StyledTableCell>
                       <StyledTableCell align="left">
-                        ${products.price}
+                        ${products.Price}
                       </StyledTableCell>
                       <StyledTableCell align="left">
                         <Fab
-                          size="small"
                           style={{ color: "red", background: "#fff" }}
                           sx={{ mr: 1 }}
                           onClick={() => handleDelete(products._id)}

@@ -11,6 +11,7 @@ import AddProduct from './Admin/AddProduct/AddProduct';
 import MakeAdmin from './Admin/MakeAdmin/MakeAdmin';
 import ManagesAllOrders from './Admin/ManageAllOrders/ManagesAllOrders';
 import ManageProduct from './Admin/ManageProduct/ManageProduct';
+import DashboardHome from './DashboardHome/DashboardHome';
 import Payment from './User/Payment/Payment';
 import UserOrder from './User/UserOrder/UserOrder';
 import UserReview from './User/UserReview/UserReview';
@@ -92,143 +93,145 @@ const Dashboard = (props) => {
      window !== undefined ? () => window().document.body : undefined;
 
   return (
-      
-      <div>
-        <Box sx={{ display: "flex" }}>
-          <CssBaseline />
-          <AppBar
-            position="fixed"
-            sx={{
-              background: "#ff80ab",
-              width: { sm: `calc(100% - ${drawerWidth}px)` },
-              ml: { sm: `${drawerWidth}px` },
-            }}
-          >
-            <Toolbar>
-              <Button
-                color="inherit"
-                aria-label="open drawer"
-                edge="start"
-                onClick={handleDrawerToggle}
-                sx={{ mr: 2, display: { sm: "none" } }}
-              >
-                Menu
-              </Button>
-              <Typography
-                variant="h6"
-                noWrap
-                component="div"
-                sx={{ flexGrow: 1, textAlign: "left" }}
-              >
-                Dashboard
-              </Typography>
-              <Button color="inherit" component={Link} to="/">
-                Home
-              </Button>
-              {currentUser?.email ? (
-                <>
-                  <Button
-                    onClick={logOut}
-                    variant="contained"
-                    color="secondary"
-                    sx={{ mx: 3 }}
-                  >
-                    Logout
-                  </Button>
-
-                  {currentUser?.photoURL ? (
-                    <Avatar src={currentUser?.photoURL} />
-                  ) : (
-                    <>
-                      <Avatar sx={{ mx: 2 }} />
-                    </>
-                  )}
-                </>
-              ) : (
-                <Button color="inherit" component={Link} to="/login">
-                  Login
+    <div style={{ background: "#00adff14", height: "100vh" }}>
+      <Box sx={{ display: "flex" }}>
+        <CssBaseline />
+        <AppBar
+          position="fixed"
+          sx={{
+            background: "#ff80ab",
+            width: { sm: `calc(100% - ${drawerWidth}px)` },
+            ml: { sm: `${drawerWidth}px` },
+          }}
+        >
+          <Toolbar>
+            <Button
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: "none" } }}
+            >
+              Menu
+            </Button>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ flexGrow: 1, textAlign: "left" }}
+            >
+              Dashboard
+            </Typography>
+            <Button color="inherit" component={Link} to="/">
+              Home
+            </Button>
+            {currentUser?.email ? (
+              <>
+                <Button
+                  onClick={logOut}
+                  variant="contained"
+                  color="secondary"
+                  sx={{ mx: 3 }}
+                >
+                  Logout
                 </Button>
-              )}
-            </Toolbar>
-          </AppBar>
-          <Box
-            component="nav"
-            sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-            aria-label="mailbox folders"
-          >
-            <Drawer
-              container={container}
-              variant="temporary"
-              open={mobileOpen}
-              onClose={handleDrawerToggle}
-              ModalProps={{
-                keepMounted: true,
-              }}
-              sx={{
-                display: { xs: "block", sm: "none" },
-                "& .MuiDrawer-paper": {
-                  boxSizing: "border-box",
-                  width: drawerWidth,
-                  background: "#ff80ab",
-                  color: "#fff",
-                },
-              }}
-            >
-              {drawer}
-            </Drawer>
-            <Drawer
-              variant="permanent"
-              sx={{
-                display: { xs: "none", sm: "block" },
-                "& .MuiDrawer-paper": {
-                  boxSizing: "border-box",
-                  width: drawerWidth,
-                  background: "#6a1b9a",
-                  color: "#fff",
-                },
-              }}
-              open
-            >
-              {drawer}
-            </Drawer>
-          </Box>
-          <Box
-            component="main"
+
+                {currentUser?.photoURL ? (
+                  <Avatar src={currentUser?.photoURL} />
+                ) : (
+                  <>
+                    <Avatar sx={{ mx: 2 }} />
+                  </>
+                )}
+              </>
+            ) : (
+              <Button color="inherit" component={Link} to="/login">
+                Login
+              </Button>
+            )}
+          </Toolbar>
+        </AppBar>
+        <Box
+          component="nav"
+          sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+          aria-label="mailbox folders"
+        >
+          <Drawer
+            container={container}
+            variant="temporary"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{
+              keepMounted: true,
+            }}
             sx={{
-              flexGrow: 1,
-              p: 3,
-              width: { sm: `calc(100% - ${drawerWidth}px)` },
+              display: { xs: "block", sm: "none" },
+              "& .MuiDrawer-paper": {
+                boxSizing: "border-box",
+                width: drawerWidth,
+                background: "#ff80ab",
+                color: "#fff",
+              },
             }}
           >
-            <Toolbar />
-            <Switch>
-              <AdminRoute path={`${path}/addProduct`}>
-                <AddProduct />
-              </AdminRoute>
-              
-              <AdminRoute path={`${path}/makeAdmin`}>
-                <MakeAdmin />
-              </AdminRoute>
-              <AdminRoute path={`${path}/manageAllOrders`}>
-                <ManagesAllOrders />
-              </AdminRoute>
-              <AdminRoute path={`${path}/manageProduct`}>
-                <ManageProduct />
-              </AdminRoute>
-              <Route path={`${path}/payment`}>
-                <Payment />
-              </Route>
-              <Route path={`${path}/userReview`}>
-                <UserReview />
-              </Route>
-              <Route path={`${path}/userOrder`}>
-                <UserOrder />
-              </Route>
-            </Switch>
-          </Box>
+            {drawer}
+          </Drawer>
+          <Drawer
+            variant="permanent"
+            sx={{
+              display: { xs: "none", sm: "block" },
+              "& .MuiDrawer-paper": {
+                boxSizing: "border-box",
+                width: drawerWidth,
+                background: "#6a1b9a",
+                color: "#fff",
+              },
+            }}
+            open
+          >
+            {drawer}
+          </Drawer>
         </Box>
-      </div>
-    );
+        <Box
+          component="main"
+          sx={{
+            flexGrow: 1,
+            p: 3,
+            width: { sm: `calc(100% - ${drawerWidth}px)` },
+          }}
+        >
+          <Toolbar />
+          <Switch>
+            <AdminRoute path={`${path}/addProduct`}>
+              <AddProduct />
+            </AdminRoute>
+
+            <AdminRoute path={`${path}/makeAdmin`}>
+              <MakeAdmin />
+            </AdminRoute>
+            <AdminRoute path={`${path}/manageAllOrders`}>
+              <ManagesAllOrders />
+            </AdminRoute>
+            <AdminRoute path={`${path}/manageProduct`}>
+              <ManageProduct />
+            </AdminRoute>
+            <Route path={`${path}/payment`}>
+              <Payment />
+            </Route>
+            <Route path={`${path}/userReview`}>
+              <UserReview />
+            </Route>
+            <Route path={`${path}/userOrder`}>
+              <UserOrder />
+            </Route>
+            <Route path={path}>
+              <DashboardHome></DashboardHome>
+            </Route>
+          </Switch>
+        </Box>
+      </Box>
+    </div>
+  );
 };
 
 export default Dashboard;

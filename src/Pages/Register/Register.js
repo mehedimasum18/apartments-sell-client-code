@@ -6,11 +6,14 @@ import RegisterForm from './RegisterForm';
 
 const Register = () => {
   const useStyles = makeStyles({
-    boxHeight:{
-      height:"90vh",
-      display:"flex", alignItems:"center", justifyContent:"center"
-    }
-  })
+    boxHeight: {
+      height: "90vh",
+      display: "flex",
+      background: "#00adff14",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+  });
   const {boxHeight} = useStyles();
   return (
     <>

@@ -67,16 +67,6 @@ const Review = () => {
                         <Typography gutterBottom variant="h6" sx={{ mb: 0 }}>
                           {review.name}
                         </Typography>
-                        <Typography
-                          variant="body2"
-                          sx={{
-                            fontSize: "12px",
-                            fontWeight: "400",
-                            color: "#4e4e4e",
-                          }}
-                        >
-                          {review.position || "CEO"}
-                        </Typography>
                       </Box>
                     </Box>
                   </CardContent>

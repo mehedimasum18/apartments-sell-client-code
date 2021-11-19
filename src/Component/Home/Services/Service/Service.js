@@ -1,7 +1,7 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import React from 'react';
-import { useHistory } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 
 
 const useStyles = makeStyles({
@@ -11,15 +11,15 @@ const useStyles = makeStyles({
 });
 
 const Service = ({ service }) => {
-    const styleClass = useStyles();
-  const { id, Name, Location, description, size, badroom, image } = service;
+  const styleClass = useStyles();
+  const { id, Name, Location, description,Price, badroom, image } = service;
   const history = useHistory();
     const handleDetails = (id) => {
         history.push(`/service/${id}`);
     }
     return (
       <Card
-        sx={{ maxWidth: 345, textAlign: "left" }}
+        sx={{ maxWidth: 345, textAlign: "left", background:"#00adff14" }}
         className={styleClass.root}>
         <CardMedia component="img" height="200" image={image} alt="drone" />
         <CardContent>
@@ -38,12 +38,12 @@ const Service = ({ service }) => {
             {description.slice(1, 80)}
           </Typography>
           <Typography variant="subtitle2" color="text.success">
-           Floor Size: {size}
+           Price: $ {Price}
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="lg" fullWidth variant="contained" onClick={() => handleDetails(id)} >
-            Details </Button>
+          <Button size="sm" fullWidth variant="outlined" onClick={() => handleDetails(id)} >
+            Booking Now </Button>
         </CardActions>
       </Card>
     );
