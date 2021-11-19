@@ -9,7 +9,8 @@ const Review = () => {
       const [userReview, setUserReview] = useState([]);
       useEffect(() => {
         axios
-          .get(`user/review`)
+          .get(
+            `https://radiant-wildwood-26012.herokuapp.com/review`)
           .then((res) => {
             setUserReview(res.data);
           });

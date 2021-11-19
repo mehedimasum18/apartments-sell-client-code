@@ -33,7 +33,9 @@ const ManageProduct = () => {
       const [isDelete, setIsDelete] = useState(false);
       useEffect(() => {
         axios
-          .get("addServices")
+          .get(
+            "https://radiant-wildwood-26012.herokuapp.com/apartmentsServices"
+          )
           .then((res) => {
             const data = res.data;
             setAllProducts(data);
@@ -43,7 +45,7 @@ const ManageProduct = () => {
         if (window.confirm("Are your sure delete this item?")) {
           axios
             .delete(
-              `addServices/${id}`
+              `https://radiant-wildwood-26012.herokuapp.com/apartmentsServices/${id}`
             )
             .then((res) => {
               if (res.data.deletedCount) {

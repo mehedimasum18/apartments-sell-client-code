@@ -43,7 +43,7 @@ const UserOrder = () => {
     useEffect(() => {
         
       axios
-        .get("order")
+        .get("https://radiant-wildwood-26012.herokuapp.com/orders")
         .then((res) => {
           const data = res.data;
           const matchData = data.filter((dt) => dt?.email == currentUser.email);
@@ -55,10 +55,10 @@ const UserOrder = () => {
       const handleDelete = (id) => {
         if (window.confirm("Are you sure delete this item?")) {
           axios
-            .delete(`delete`)
+            .delete(`https://radiant-wildwood-26012.herokuapp.com/orders/${id}`)
             .then((res) => {
               if (res.data.deletedCount) {
-                alert("Delete successful");
+                alert("Deleted successfully");
                 setIsDelete(true);
               }
             });

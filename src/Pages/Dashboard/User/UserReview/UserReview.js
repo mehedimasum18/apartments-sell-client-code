@@ -10,12 +10,14 @@ const UserReview = () => {
     const { register, handleSubmit, errors, reset } = useForm();
     const onSubmit = (data) => {
         data.photo = currentUser?.PhotoURL;
-        axios.post(`add review`, data).then((res) => {
-            if (reset.data.acknowledged) {
+        axios
+          .post(`https://radiant-wildwood-26012.herokuapp.com/review`, data)
+          .then((res) => {
+            if (res.data.acknowledged) {
               alert("Thanks for your feedback");
               reset();
             }
-        })
+          });
         
     }
     return (

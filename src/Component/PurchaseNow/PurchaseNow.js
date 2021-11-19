@@ -15,12 +15,14 @@ const PurchaseNow = ({ open, setOpen }) => {
     const onSubmit = (data) => {
       data.status = "pending";
       setOpen(false);
-      axios.post("/data.json").then((res) => {
-        if (res.data.acknowledged) {
-          alert("Your Order is Successfully!");
-          reset();
-        }
-      });
+      axios
+        .post(`https://radiant-wildwood-26012.herokuapp.com/orders`, data)
+        .then((res) => {
+          if (res.data.acknowledged) {
+            alert("Your Order is Successfully!");
+            reset();
+          }
+        });
     };
     return (
       <>

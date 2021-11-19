@@ -9,7 +9,7 @@ const MakeAdmin = () => {
   const { register, handleSubmit, errors, reset } = useForm();
   const { currentUser } = useAuth();
   const onSubmit = (data) => {
-    axios.post(`make admin`, data).then((res) => {
+    axios.post(`https://radiant-wildwood-26012.herokuapp.com/admin`, data).then((res) => {
       if (res.data.acknowledged) {
         alert("Admin added successfully");
         reset();

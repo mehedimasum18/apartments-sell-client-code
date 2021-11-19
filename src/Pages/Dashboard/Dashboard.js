@@ -8,11 +8,14 @@ import { Link } from 'react-router-dom';
 import AdminRoute from '../../Component/AdminRoute/AdminRoute';
 import useAuth from '../../Hooks/useAuth';
 import AddProduct from './Admin/AddProduct/AddProduct';
+import MakeAdmin from './Admin/MakeAdmin/MakeAdmin';
+import ManagesAllOrders from './Admin/ManageAllOrders/ManagesAllOrders';
+import ManageProduct from './Admin/ManageProduct/ManageProduct';
 import Payment from './User/Payment/Payment';
 import UserOrder from './User/UserOrder/UserOrder';
 import UserReview from './User/UserReview/UserReview';
 
-const drawerWidth = 250;
+const drawerWidth = 240;
 
 const Dashboard = (props) => {
   const { window } = props;
@@ -202,16 +205,16 @@ const Dashboard = (props) => {
               <AdminRoute path={`${path}/addProduct`}>
                 <AddProduct />
               </AdminRoute>
-              {/*
+              
               <AdminRoute path={`${path}/makeAdmin`}>
                 <MakeAdmin />
               </AdminRoute>
               <AdminRoute path={`${path}/manageAllOrders`}>
-                <ManageAllOrders />
+                <ManagesAllOrders />
               </AdminRoute>
               <AdminRoute path={`${path}/manageProduct`}>
                 <ManageProduct />
-              </AdminRoute> */}
+              </AdminRoute>
               <Route path={`${path}/payment`}>
                 <Payment />
               </Route>

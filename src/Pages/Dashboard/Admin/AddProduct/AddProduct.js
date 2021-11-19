@@ -8,7 +8,7 @@ const AddProduct = () => {
     const { register, handleSubmit, errors, reset } = useForm();
     const onSubmit = (data) => {
       axios
-        .post("/addProduct", data)
+        .post("https://radiant-wildwood-26012.herokuapp.com/addProduct", data)
         .then((res) => {
           if (res.data.acknowledged) {
             alert("added successfully ");

@@ -8,8 +8,11 @@ const Explore = () => {
     const [services, setServices] = useState([]);
     
     useEffect(() => {
-        axios.get("http://localhost:5000/apartmentsServices")
-            .then((res) => setServices(res.data));
+        axios
+          .get(
+            "https://radiant-wildwood-26012.herokuapp.com/apartmentsServices"
+          )
+          .then((res) => setServices(res.data));
         
     })
     return (

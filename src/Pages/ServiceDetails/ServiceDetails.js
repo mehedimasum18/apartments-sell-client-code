@@ -23,14 +23,17 @@ const ServiceDetails = () => {
   const [singleService, setSingleService] = useState({});
 
   useEffect(() => {
-    axios.get(`/data.json`).then((res) => {
-      setServiceDetail(res.data);
-    });
+    axios
+      .get(`https://radiant-wildwood-26012.herokuapp.com/apartmentsServices`)
+      .then((res) => {
+        setServiceDetail(res.data);
+      });
   }, []);
+
 
   useEffect(() => {
     if (serviceDetail.length > 0) {
-      const matchData = serviceDetail.find((data) => data.id == serviceId);
+      const matchData = serviceDetail.find((data) => data._id == serviceId);
       setSingleService(matchData);
     }
   }, [serviceDetail]);

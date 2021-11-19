@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 
-
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.black,
@@ -34,7 +33,7 @@ const ManagesAllOrders = () => {
 
     useEffect(() => {
       axios
-        .get("/orders")
+        .get(`https://radiant-wildwood-26012.herokuapp.com/orders`)
         .then((res) => {
           const data = res.data;
           setOrders(data);
@@ -47,11 +46,8 @@ const ManagesAllOrders = () => {
         const matchData = orders.find((order) => order._id === id);
         axios
           .put(
-            `/orders/${id}`,
-            matchData
-          )
-          .then((res) => {
-            console.log(res);
+            `https://radiant-wildwood-26012.herokuapp.com/orders/${id}`,
+            matchData).then((res) => {
             if (res.data.modifiedCount) {
               alert("successfully update status");
               setIsDelete(true);

@@ -9,7 +9,9 @@ const Services = () => {
     
     useEffect(() => {
         axios
-          .get("http://localhost:5000/apartmentsServices")
+          .get(
+            "https://radiant-wildwood-26012.herokuapp.com/apartmentsServices"
+          )
           .then((res) => setServices(res.data));
     });
     
